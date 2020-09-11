@@ -1,4 +1,29 @@
 ﻿<Properties StartupConfiguration="{FEB4E6F4-15B9-4792-80D0-C8179D1BD924}|Default">
-  <MonoDevelop.Ide.ItemProperties.VehicleManagementSystem FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/Models/Car.cs">
+    <Files>
+      <File FileName="VehicleManagementSystem/Models/Vehicle.cs" Line="18" Column="46" />
+      <File FileName="VehicleManagementSystem/Models/Car.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="VehicleManagementSystem" expanded="True">
+            <Node name="VehicleManagementSystem" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Car.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.VehicleManagementSystem FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
