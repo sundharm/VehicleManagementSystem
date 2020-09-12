@@ -1,44 +1,10 @@
 ﻿<Properties StartupConfiguration="{FEB4E6F4-15B9-4792-80D0-C8179D1BD924}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/Services/VehicleService.cs">
     <Files>
-      <File FileName="VehicleManagementSystem/Models/Car.cs" Line="27" Column="29" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" Line="52" Column="25" />
       <File FileName="VehicleManagementSystem/Controllers/VehicleController.cs" />
-      <File FileName="VehicleManagementSystem/Startup.cs" Line="25" Column="1" />
-      <File FileName="VehicleManagementSystem/Services/VehicleService.cs" />
-      <File FileName="VehicleManagementSystem/Program.cs" />
-      <File FileName="VehicleManagementSystem/Properties/launchSettings.json" />
-      <File FileName="VehicleManagementSystem/appsettings.json" />
-      <File FileName="VehicleManagementSystem/Models/Vehicle.cs" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.css" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/Home.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/Layout.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/index.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/App.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/package.json" />
-      <File FileName="VehicleManagementSystem/ClientApp/public/index.html" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/NavMenu.css" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" />
+      <File FileName="VehicleManagementSystem/Services/VehicleService.cs" Line="55" Column="56" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="VehicleManagementSystem" expanded="True">
-            <Node name="VehicleManagementSystem" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="components" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.VehicleManagementSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

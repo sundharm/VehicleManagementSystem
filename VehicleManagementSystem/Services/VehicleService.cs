@@ -42,13 +42,13 @@ namespace VehicleManagementSystem.Services
         //Function to deserialize JSON object and extract vehicle details
         public static void ExtractVehicleDetails(JsonElement VehicleJson)
         {
-            string vehicleType = VehicleJson.GetProperty("Type").ToString();
-            string vehicleMake = VehicleJson.GetProperty("Make").ToString();
-            string vehicleModel = VehicleJson.GetProperty("Model").ToString();
-            string engine = VehicleJson.GetProperty("Engine").ToString();
-            int numOfDoors = int.Parse(VehicleJson.GetProperty("NumOfDoors").ToString());
-            int numOfWheels = int.Parse(VehicleJson.GetProperty("NumOfWheels").ToString());
-            string bodyType = VehicleJson.GetProperty("BodyType").ToString();
+            string vehicleType = VehicleJson.GetProperty("type").ToString();
+            string vehicleMake = VehicleJson.GetProperty("make").ToString();
+            string vehicleModel = VehicleJson.GetProperty("model").ToString();
+            string engine = VehicleJson.GetProperty("engine").ToString();
+            int numOfDoors = int.Parse(VehicleJson.GetProperty("numOfDoors").ToString());
+            int numOfWheels = int.Parse(VehicleJson.GetProperty("numOfWheels").ToString());
+            string bodyType = VehicleJson.GetProperty("bodyType").ToString();
 
             Vehicle vehicle;
 

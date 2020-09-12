@@ -2,6 +2,7 @@
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 import './styles/AddNewCar.css'
 
 export class AddNewCar extends Component {
@@ -44,6 +45,23 @@ export class AddNewCar extends Component {
     handleNumberOfWheels(event) {
         this.setState({ numOfWheels: event.target.value })
     }
+
+    handleFormSubmit(event) {
+        axios.post('/api/vehicle/add-vehicle', 
+        {
+            type: 'car',
+            make: this.state.make,
+            model: this.state.model,
+            bodyType: this.state.bodyType,
+            engine: this.state.engine,
+            numOfDoors: this.state.numOfDoors,
+            numOfWheels: this.state.numOfWheels
+        })
+        .then(response=>{
+            console.log(response);
+        })
+    }
+
 
     render() {
         const { make, model, engine,bodyType,numOfDoors, 
@@ -110,6 +128,7 @@ export class AddNewCar extends Component {
                     <Button
                         variant='primary'
                         className='button'
+                        onClick={this.handleFormSubmit.bind(this)}
                     >
                         Add
                     </Button>
