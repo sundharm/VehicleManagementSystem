@@ -19,8 +19,8 @@ export class AddNewCar extends Component {
             numOfDoors: '',
             numOfWheels: '',
             validateError:'',
-            success: false,
-            failure: false
+            showSuccessAlert: false,
+            showFailureAlert: false
         };
     }
 
@@ -31,7 +31,21 @@ export class AddNewCar extends Component {
         });
     }
 
-    handleSuccess(){
+    handleSuccessResponse(){
+        this.clearState();
+        this.setState({
+            showSuccessAlert: true
+        })
+    }
+
+    handleFailureResponse() {
+        this.setState({
+            showFailureAlert: true,
+            showSuccessAlert: false
+        })
+    }
+
+    clearState(){
         this.setState({
             make: '',
             model: '',
@@ -39,23 +53,16 @@ export class AddNewCar extends Component {
             engine: '',
             numOfDoors: '',
             numOfWheels: '',
-            success: true,
-            failure: false
-        })
-    }
-
-    handleFailure() {
-        this.setState({
-            failure:true,
-            success:false
+            showSuccessAlert: false,
+            showFailureAlert: false
         })
     }
 
     validate() {
         let validateError = "";
-        if (this.state.make === "" || this.state.model===""
-        || this.state.engine==="" || this.state.bodyType===""
-        || this.state.numOfDoors==="" || this.state.numOfWheels==="") {
+        if (this.state.make === "" || this.state.model === ""
+        || this.state.engine === "" || this.state.bodyType === ""
+        || this.state.numOfDoors === "" || this.state.numOfWheels === "") {
             validateError = "All fields are required!"
         }
 
@@ -72,7 +79,10 @@ export class AddNewCar extends Component {
     handleSubmit(event) {
         event.preventDefault();
         if(this.validate()){  
-            axios.post('/api/vehicle/add-car', 
+            this.setState({
+                validateError: ""
+            })
+            axios.post(process.env.REACT_APP_ADD_CAR_API, 
             {
                 type: 'car',
                 make: this.state.make,
@@ -84,15 +94,12 @@ export class AddNewCar extends Component {
             })
             .then(response=>{
                 if(response.status===200){
-                    this.handleSuccess();
+                    this.handleSuccessResponse();
                 }          
             })
             .catch(error=>{
                 console.log(error.response.data);
-                this.handleFailure();
-            })
-            this.setState({
-                validateError: ""
+                this.handleFailureResponse();
             })
         }
         
@@ -100,20 +107,20 @@ export class AddNewCar extends Component {
 
     render() {
         const { make, model, engine,bodyType,numOfDoors, 
-            numOfWheels, success, failure } = this.state;
+            numOfWheels, showSuccessAlert, showFailureAlert } = this.state;
 
         return (
             <div>   
                 <h3 className='label'>Add a Car</h3>
                 {
-                    success && 
-                    <UncontrolledAlert color="success" fade={true}>
+                    showSuccessAlert && 
+                    <UncontrolledAlert color="success">
                         Car added successfully!
                     </UncontrolledAlert>
                 }
                 {
-                    failure && 
-                    <UncontrolledAlert color="danger" fade={true}>
+                    showFailureAlert && 
+                    <UncontrolledAlert color="danger">
                         Error adding car! Please check your input.
                     </UncontrolledAlert>
                 }
@@ -158,7 +165,7 @@ export class AddNewCar extends Component {
                             />
                         </Form.Group>
                         <Form.Group as={Col} controlId='formNumOfDoors'>
-                                <Form.Control
+                            <Form.Control
                                 as='select'
                                 name='numOfDoors'
                                 value={numOfDoors}
@@ -173,7 +180,7 @@ export class AddNewCar extends Component {
                                     <option>6</option>
                                     <option>7</option>
                                     <option>8</option>
-                                </Form.Control>
+                            </Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId='formNumOfWheels'>
                             <Form.Control
