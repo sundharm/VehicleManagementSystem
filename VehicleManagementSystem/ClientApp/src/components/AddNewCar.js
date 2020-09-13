@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import { UncontrolledAlert } from 'reactstrap';
 import axios from 'axios';
 import './styles/AddNewCar.css'
-
+ 
 export class AddNewCar extends Component {
 
     constructor(props) {
@@ -31,6 +31,7 @@ export class AddNewCar extends Component {
         });
     }
 
+    //show success alert from server
     handleSuccessResponse(){
         this.clearState();
         this.setState({
@@ -38,6 +39,7 @@ export class AddNewCar extends Component {
         })
     }
 
+    //show error alert from server
     handleFailureResponse() {
         this.setState({
             showFailureAlert: true,
@@ -45,6 +47,7 @@ export class AddNewCar extends Component {
         })
     }
 
+    //function to get the initial state
     clearState(){
         this.setState({
             make: '',
@@ -58,6 +61,7 @@ export class AddNewCar extends Component {
         })
     }
 
+    //simple validation to get all inputs from user
     validate() {
         let validateError = "";
         if (this.state.make === "" || this.state.model === ""
@@ -76,11 +80,12 @@ export class AddNewCar extends Component {
         return true;
     }
 
+    //axios to submit data only if valid
     handleSubmit(event) {
         event.preventDefault();
         if(this.validate()){  
             this.setState({
-                validateError: ""
+                validateError: "",
             })
             axios.post(process.env.REACT_APP_ADD_CAR_API, 
             {

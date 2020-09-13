@@ -22,7 +22,8 @@ namespace VehicleManagementSystem.Services
             try
             {
                 //vehicle id is nothing but the current size of list plus 1
-                vehicle.VehicleId = vehicles.Count + 1;
+                int id = GetNewID();
+                vehicle.VehicleId = id;
                 vehicles.Add(vehicle);
                 return true;
             }
@@ -32,13 +33,26 @@ namespace VehicleManagementSystem.Services
             }
         }
 
+        //returns new id as the last element in list plus 1 to maintain uniqueness
+        //when deletion/removal takes place later
+        private static int GetNewID()
+        {
+            int id = 0;
+            if (vehicles.Count > 0)
+            {
+                id = vehicles[vehicles.Count - 1].VehicleId + 1;
+            }
+            
+            return id;
+        }
+
         //returns the current instance's list of vehicles
         public static List<Vehicle> GetAllCars()
         {
             List<Vehicle> carList = new List<Vehicle>();
             foreach(Vehicle v in vehicles)
             {
-                if (v.VehicleType.Equals("car"))
+                if (v.VehicleType.Equals(Constants.CAR))
                     carList.Add(v);
             }
             return carList;
@@ -57,9 +71,10 @@ namespace VehicleManagementSystem.Services
 
             //Check for the type of vehicle here and create corresponding object
             //Additional functionality for different types can be added later
-            if (vehicleType.Equals("car"))
+            if (vehicleType.Equals(Constants.CAR))
             {
-                vehicle = new Car(vehicleMake,
+                vehicle = new Car(vehicleType,
+                                  vehicleMake,
                                   vehicleModel,
                                   engine,
                                   numOfDoors,

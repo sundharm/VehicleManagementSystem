@@ -28,11 +28,14 @@ export class Home extends Component {
 
         return (
             <React.Fragment>
-                <DropdownButton className="drop-down-btn" id="dropdown-basic-button" title="Select a vehicle to add">
-                    <Dropdown.Item onClick={this.handleCarSelected.bind(this)}>Car</Dropdown.Item>
-                    <Dropdown.Item className="disabled">Bike</Dropdown.Item>
-                    <Dropdown.Item className="disabled">Boat</Dropdown.Item>
+                <DropdownButton className="dropDownBtn" id="dropdown-basic-button" title="Select a vehicle to add">
+                    <Dropdown.Item onClick={this.handleCarSelected.bind(this)}>Create car</Dropdown.Item>
+                    <Dropdown.Item className="disabled">Create bike</Dropdown.Item>
+                    <Dropdown.Item className="disabled">Create boat</Dropdown.Item>
                 </DropdownButton>
+                <div className="footerMsg">
+                    <p>Note:<i> Only cars are supported currently. Other vehicle types will be added in the future.</i></p>
+                </div>
             </React.Fragment>
         )
     }

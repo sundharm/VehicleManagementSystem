@@ -5,7 +5,12 @@ using Microsoft.AspNetCore.Http;
 using VehicleManagementSystem.Models;
 using VehicleManagementSystem.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+/*
+ * 
+ * Controller to add a new car and get all cars in the
+ * current instance.
+ * 
+ */
 
 namespace VehicleManagementSystem.Controllers
 {
@@ -35,7 +40,8 @@ namespace VehicleManagementSystem.Controllers
 
 
             try
-            { 
+            {
+                //get the add car service to validate and store the data
                 VehicleServices.AddCar(vehicleType,
                                        vehicleMake,
                                        vehicleModel,

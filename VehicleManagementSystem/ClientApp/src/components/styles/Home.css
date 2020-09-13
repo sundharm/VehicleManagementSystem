@@ -1,5 +1,10 @@
-.drop-down-btn {
+.dropDownBtn {
     margin-top: 5%;
     display: flex;
     justify-content: center;
+}
+
+.footerMsg {
+    position: absolute;
+    bottom: 5px;
 }

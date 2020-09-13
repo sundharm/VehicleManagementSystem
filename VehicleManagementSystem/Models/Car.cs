@@ -20,12 +20,13 @@ namespace VehicleManagementSystem.Models
 
         //assigns the vehicle class with the "type" of vehicle
         public Car(
+            string VehicleType,
             string Make,
             string Model,
             string Engine,
             int NumOfDoors,
             int numOfWheels,
-            string bodyType) : base("car", Make, Model)
+            string bodyType) : base(VehicleType, Make, Model)
         {
             this.NumOfDoors = NumOfDoors;
             this.NumOfWheels = numOfWheels;
