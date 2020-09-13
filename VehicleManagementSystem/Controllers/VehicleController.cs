@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using VehicleManagementSystem.Models;
 using VehicleManagementSystem.Services;
 
@@ -20,6 +21,7 @@ namespace VehicleManagementSystem.Controllers
 
         [HttpPost]
         [Route("api/vehicle/add-vehicle")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post([FromBody]JsonElement vehicle)
         {
             try

@@ -65,7 +65,7 @@ namespace VehicleManagementSystem.Services
             }
             else
             {
-                throw new Exception("Invalid type of vehicles");
+                throw new Exception("Invalid type of vehicle");
             }
 
             try
