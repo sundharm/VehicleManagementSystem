@@ -2,21 +2,21 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/ClientApp/src/components/Home.js">
     <Files>
       <File FileName="VehicleManagementSystem/Controllers/VehicleController.cs" Line="22" Column="42" />
-      <File FileName="VehicleManagementSystem/Models/Car.cs" Line="31" Column="42" />
-      <File FileName="VehicleManagementSystem/Models/Vehicle.cs" Line="1" Column="1" />
-      <File FileName="VehicleManagementSystem/Services/VehicleServices.cs" Line="54" Column="14" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" Line="20" Column="29" />
+      <File FileName="VehicleManagementSystem/Models/Car.cs" />
+      <File FileName="VehicleManagementSystem/Models/Vehicle.cs" />
+      <File FileName="VehicleManagementSystem/Services/VehicleServices.cs" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" />
       <File FileName="VehicleManagementSystemTests/Tests/VehicleServicesTest.cs" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.js" Line="19" Column="2" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.js" />
       <File FileName="VehicleManagementSystem/ClientApp/src/components/Layout.js" />
       <File FileName="VehicleManagementSystem/ClientApp/src/components/Home.js" Line="37" Column="79" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/AddNewCar.css" Line="14" Column="17" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/Home.css" Line="9" Column="17" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/NavMenu.css" Line="8" Column="18" />
-      <File FileName="VehicleManagementSystem/Constants.cs" Line="6" Column="41" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/App.js" Line="16" Column="68" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/custom.css" Line="1" Column="1" />
-      <File FileName="VehicleManagementSystem/ClientApp/public/index.html" Line="39" Column="8" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/AddNewCar.css" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/Home.css" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/NavMenu.css" />
+      <File FileName="VehicleManagementSystem/Constants.cs" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/App.js" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/custom.css" />
+      <File FileName="VehicleManagementSystem/ClientApp/public/index.html" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
