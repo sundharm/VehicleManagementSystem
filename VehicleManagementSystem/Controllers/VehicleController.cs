@@ -13,24 +13,40 @@ namespace VehicleManagementSystem.Controllers
     {
 
         [HttpGet]
-        [Route("api/vehicle/get-all-vehicles")]
+        [Route("api/vehicle/get-all-cars")]
         public IEnumerable<Vehicle> Get()
         {
-            return VehicleService.GetAllVehicles();
+            return VehicleServices.GetAllCars();
         }
 
         [HttpPost]
-        [Route("api/vehicle/add-vehicle")]
+        [Route("api/vehicle/add-car")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post([FromBody]JsonElement vehicle)
         {
+            //Deserialize JSON object and extract car details
+            string vehicleType = vehicle.GetProperty("type").ToString();
+            string vehicleMake = vehicle.GetProperty("make").ToString();
+            string vehicleModel = vehicle.GetProperty("model").ToString();
+            string engine = vehicle.GetProperty("engine").ToString();
+            int numOfDoors = int.Parse(vehicle.GetProperty("numOfDoors").ToString());
+            int numOfWheels = int.Parse(vehicle.GetProperty("numOfWheels").ToString());
+            string bodyType = vehicle.GetProperty("bodyType").ToString();
+
+
             try
-            {
-                VehicleService.ExtractVehicleDetails(vehicle);
+            { 
+                VehicleServices.AddCar(vehicleType,
+                                       vehicleMake,
+                                       vehicleModel,
+                                       engine,
+                                       numOfDoors,
+                                       numOfWheels,
+                                       bodyType);
             }
             catch
             {
-                return BadRequest();
+                return BadRequest("Invalid input");
             }
 
             return Ok();

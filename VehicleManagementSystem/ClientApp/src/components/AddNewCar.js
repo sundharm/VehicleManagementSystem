@@ -18,6 +18,7 @@ export class AddNewCar extends Component {
             engine: '',
             numOfDoors: '',
             numOfWheels: '',
+            validateError:'',
             success: false,
             failure: false
         };
@@ -43,36 +44,59 @@ export class AddNewCar extends Component {
         })
     }
 
-    handleFailure(){
+    handleFailure() {
         this.setState({
             failure:true,
             success:false
         })
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        axios.post('/api/vehicle/add-vehicle', 
-        {
-            type: 'car',
-            make: this.state.make,
-            model: this.state.model,
-            bodyType: this.state.bodyType,
-            engine: this.state.engine,
-            numOfDoors: this.state.numOfDoors,
-            numOfWheels: this.state.numOfWheels
-        })
-        .then(response=>{
-            if(response.status===200){
-                this.handleSuccess();
-            }          
-        })
-        .catch(error=>{
-            console.log(error.response.data);
-            this.handleFailure();
-        })
+    validate() {
+        let validateError = "";
+        if (this.state.make === "" || this.state.model===""
+        || this.state.engine==="" || this.state.bodyType===""
+        || this.state.numOfDoors==="" || this.state.numOfWheels==="") {
+            validateError = "All fields are required!"
+        }
+
+        if(validateError){
+            this.setState({
+                validateError
+            })
+            return false;
+        }
+        
+        return true;
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        if(this.validate()){  
+            axios.post('/api/vehicle/add-car', 
+            {
+                type: 'car',
+                make: this.state.make,
+                model: this.state.model,
+                bodyType: this.state.bodyType,
+                engine: this.state.engine,
+                numOfDoors: this.state.numOfDoors,
+                numOfWheels: this.state.numOfWheels
+            })
+            .then(response=>{
+                if(response.status===200){
+                    this.handleSuccess();
+                }          
+            })
+            .catch(error=>{
+                console.log(error.response.data);
+                this.handleFailure();
+            })
+            this.setState({
+                validateError: ""
+            })
+        }
+        
+    }
 
     render() {
         const { make, model, engine,bodyType,numOfDoors, 
@@ -83,18 +107,20 @@ export class AddNewCar extends Component {
                 <h3 className='label'>Add a Car</h3>
                 {
                     success && 
-                    <UncontrolledAlert color="success">
+                    <UncontrolledAlert color="success" fade={true}>
                         Car added successfully!
                     </UncontrolledAlert>
                 }
                 {
                     failure && 
-                    <UncontrolledAlert color="danger">
+                    <UncontrolledAlert color="danger" fade={true}>
                         Error adding car! Please check your input.
                     </UncontrolledAlert>
                 }
+
+                <div className="validateError">{this.state.validateError}</div>
                 <div className = "wrapper">
-                <Form as={Col} className='display-grid'>
+                <Form as={Col} className='displayGrid'>
                     <Form.Row>
                         <Form.Group as={Col} controlId='formMake'>
                             <Form.Control
@@ -111,7 +137,8 @@ export class AddNewCar extends Component {
                                 value = {model}
                                 onChange={this.handleChange.bind(this)}
                             />
-                        </Form.Group>
+                            </Form.Group>
+
                         <Form.Group as={Col} controlId='formBodyType'>
                             <Form.Control
                                 name='bodyType'
@@ -131,39 +158,36 @@ export class AddNewCar extends Component {
                             />
                         </Form.Group>
                         <Form.Group as={Col} controlId='formNumOfDoors'>
-                            <Form.Control
+                                <Form.Control
+                                as='select'
                                 name='numOfDoors'
-                                as = 'select'
                                 value={numOfDoors}
                                 onChange={this.handleChange.bind(this)}
-                            >
-                                <option>Number of doors</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                            </Form.Control>
+                                >   
+                                    <option value="" selected disabled>Number of Doors</option> 
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId='formNumOfWheels'>
                             <Form.Control
                                 as='select'
                                 name='numOfWheels'
-                                min='0'
-                                max='10'
-                                placeholder='Number of wheels'
                                 value={numOfWheels}
                                 onChange={this.handleChange.bind(this)}
-                            >
-                                <option>Number of wheels</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
+                                >
+                                    <option value="" selected disabled>Number of Wheels</option> 
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
                             </Form.Control>
                         </Form.Group>
                     </Form.Row>

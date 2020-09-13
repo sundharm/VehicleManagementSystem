@@ -1,27 +1,39 @@
 ﻿<Properties StartupConfiguration="{FEB4E6F4-15B9-4792-80D0-C8179D1BD924}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js">
     <Files>
-      <File FileName="VehicleManagementSystem/Services/VehicleService.cs" Line="18" Column="1" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" Line="149" Column="51" />
+      <File FileName="VehicleManagementSystem/Controllers/VehicleController.cs" Line="31" Column="41" />
+      <File FileName="VehicleManagementSystem/Models/Car.cs" Line="28" Column="41" />
+      <File FileName="VehicleManagementSystem/Models/Vehicle.cs" Line="1" Column="1" />
+      <File FileName="VehicleManagementSystem/Services/VehicleServices.cs" Line="25" Column="46" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" Line="122" Column="17" />
+      <File FileName="VehicleManagementSystemTests/Tests/VehicleServicesTest.cs" Line="22" Column="1" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.js" Line="19" Column="2" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/Layout.js" Line="1" Column="1" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/Home.js" Line="17" Column="26" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/AddNewCar.css" Line="23" Column="8" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/Home.css" Line="1" Column="1" />
+      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/NavMenu.css" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VehicleManagementSystem" expanded="True">
             <Node name="VehicleManagementSystem" expanded="True">
-              <Node name="Dependencies" expanded="True" />
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="components" expanded="True">
+                    <Node name="styles" expanded="True" />
                     <Node name="AddNewCar.js" selected="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="VehicleManagementSystem" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

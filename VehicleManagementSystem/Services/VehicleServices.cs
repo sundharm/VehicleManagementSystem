@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json;
 using VehicleManagementSystem.Models;
 
 /*
@@ -10,9 +9,10 @@ using VehicleManagementSystem.Models;
  * work with a database.
  *
  */
+
 namespace VehicleManagementSystem.Services
 {
-    public class VehicleService
+    public class VehicleServices
     {
         private static List<Vehicle> vehicles = new List<Vehicle>();
 
@@ -33,27 +33,30 @@ namespace VehicleManagementSystem.Services
         }
 
         //returns the current instance's list of vehicles
-        public static List<Vehicle> GetAllVehicles()
+        public static List<Vehicle> GetAllCars()
         {
-            return vehicles;
+            List<Vehicle> carList = new List<Vehicle>();
+            foreach(Vehicle v in vehicles)
+            {
+                if (v.VehicleType.Equals("car"))
+                    carList.Add(v);
+            }
+            return carList;
         }
 
-
-        //Function to deserialize JSON object and extract vehicle details
-        public static void ExtractVehicleDetails(JsonElement VehicleJson)
+        //Function to create a new car object to add to vehicle list
+        public static void AddCar(string vehicleType,
+                                  string vehicleMake,
+                                  string vehicleModel,
+                                  string engine,
+                                  int numOfDoors,
+                                  int numOfWheels,
+                                  string bodyType)
         {
-            string vehicleType = VehicleJson.GetProperty("type").ToString();
-            string vehicleMake = VehicleJson.GetProperty("make").ToString();
-            string vehicleModel = VehicleJson.GetProperty("model").ToString();
-            string engine = VehicleJson.GetProperty("engine").ToString();
-            int numOfDoors = int.Parse(VehicleJson.GetProperty("numOfDoors").ToString());
-            int numOfWheels = int.Parse(VehicleJson.GetProperty("numOfWheels").ToString());
-            string bodyType = VehicleJson.GetProperty("bodyType").ToString();
-
             Vehicle vehicle;
 
             //Check for the type of vehicle here and create corresponding object
-            //Additional functionality for different types can be added
+            //Additional functionality for different types can be added later
             if (vehicleType.Equals("car"))
             {
                 vehicle = new Car(vehicleMake,
@@ -77,6 +80,7 @@ namespace VehicleManagementSystem.Services
                 throw;
             }
 
-        }   
+        }
     }
+
 }

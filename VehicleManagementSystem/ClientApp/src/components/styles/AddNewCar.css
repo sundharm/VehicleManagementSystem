@@ -1,4 +1,4 @@
-.display-grid{
+.displayGrid{
     width: 100%;
     display: block;
     margin: 1em auto;
@@ -23,5 +23,11 @@
 .label{
     display: flex;
     justify-content: center;
+}
+
+.validateError{
+    display: flex;
+    justify-content: center;
+    color: red;
 }
 

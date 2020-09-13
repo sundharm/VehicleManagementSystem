@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+import './styles/Home.css'
 
 
 export class Home extends Component {
@@ -27,7 +28,7 @@ export class Home extends Component {
 
         return (
             <React.Fragment>
-                <DropdownButton className="drop-down-button" id="dropdown-basic-button" title="Select a vehicle to add">
+                <DropdownButton className="drop-down-btn" id="dropdown-basic-button" title="Select a vehicle to add">
                     <Dropdown.Item onClick={this.handleCarSelected.bind(this)}>Car</Dropdown.Item>
                     <Dropdown.Item className="disabled">Bike</Dropdown.Item>
                     <Dropdown.Item className="disabled">Boat</Dropdown.Item>
