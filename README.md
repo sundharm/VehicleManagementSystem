@@ -3,7 +3,8 @@
 Full-Stack Web application with a React front-end and a .NET Core back-end for a simple Vehicle management system.
 
 ## To run the application:
-    Download the source code and open the VehicleManagementSystem.sln file using Visual Studio. The app can then be started from Visual Studio.
+    Download the source code and open the VehicleManagementSystem.sln file using Visual Studio. 
+    The app can then be started from Visual Studio.
 
 ## Backend: 
 Built using .NET Core 3.1. 
