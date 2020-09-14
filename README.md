@@ -7,6 +7,7 @@ To run the application:
 
 Backend: 
 Built using .NET Core 3.1. 
+
     Structure:
         1. Models: Contains an abstract vehicle class to cater to different types of vehicles (Cars for now).
         2. Services: Contains a vehicle services class for the read/write functionalitie. This can be updated to support different     vehicles in the future.
@@ -20,6 +21,7 @@ Built using .NET Core 3.1.
 
 Frontend:
 Built using ReactJS. User can only add a car currently.
+
     Structure:
         1. Components:
             1. Home: Dropdown to create a new vehicle
