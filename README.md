@@ -2,11 +2,11 @@
 
 Full-Stack Web application with a React front-end and a .NET Core back-end for a simple Vehicle management system.
 
-##To run the application:
+## To run the application:
 
     Download the source code and open the VehicleManagementSystem.sln file using Visual Studio. The app can then be started from Visual Studio.
 
-##Backend: 
+## Backend: 
 Built using .NET Core 3.1. 
 
     Structure:
@@ -24,7 +24,7 @@ Built using .NET Core 3.1.
         Swagger has been integrated to the project. The endpoints details can be found and tested on https://localhost:5001/swagger
         For manually testing use "api/vehicle/add-car" to add car and "api/vehicle/get-all-cars" to retrieve cars.
 
-##Frontend:
+## Frontend:
 Built using ReactJS. User can add a car currently.
 
     Structure:
