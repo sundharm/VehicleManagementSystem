@@ -38,7 +38,7 @@ Built using ReactJS. User can add a car currently.
     Styling:
         Bootstrap framework has been used for styling (dropdown and form components).
    
-   API calls:
+    API calls:
         AXIOS has been used for communicating with the backend (to add new car here).
         
      
