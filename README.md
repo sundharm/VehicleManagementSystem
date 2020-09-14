@@ -24,7 +24,7 @@ Built using .NET Core 3.1.
         
     Documentation:
         Swagger has been integrated to the project. The endpoints details can be found and tested on 
-        https://localhost:5001/swagger.
+        /swagger.
         
     For manually testing use "api/vehicle/add-car" to add car and "api/vehicle/get-all-cars" to retrieve cars.
 
