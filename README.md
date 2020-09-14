@@ -35,7 +35,9 @@ Built using ReactJS. User can add a car currently.
         1. Components:
             1. Home: Dropdown to create a new vehicle
             2. Add Car: Contains the form to get car details from user
-        2. Styles: contains the css files of the application    
+            3. State management like redux has not been used as the state of this application is ephemeral.
+                Can be added when complications increase.
+        2. Styles: contains the css files of the application 
     
     Styling:
         Bootstrap framework has been used for styling (dropdown and form components).
