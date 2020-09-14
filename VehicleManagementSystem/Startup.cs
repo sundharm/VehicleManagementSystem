@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VehicleManagementSystem.Services;
 
 namespace VehicleManagementSystem
 {
@@ -30,6 +31,9 @@ namespace VehicleManagementSystem
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            //calls a single instance of services throughout the lifetime of a run
+            services.AddSingleton<IVehicleService, VehicleServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,8 +11,9 @@ Built using .NET Core 3.1.
 
     Structure:
         1. Models: Contains an abstract vehicle class to cater to different types of vehicles (Cars for now).
-        2. Services: Contains a vehicle services class for the read/write functionalities. 
+        2. Services: Contains a vehicle services class and interface for the read/write functionalities. 
             This can be updated to support different vehicles in the future.
+        3. Dependency injection: Implemented by constructor injection of service interface to the controller
         3. Controller: Consists of the get and post endpoints to add cars and retrieve all cars.
         
     Storage:

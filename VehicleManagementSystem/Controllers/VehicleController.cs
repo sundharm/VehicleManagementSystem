@@ -16,12 +16,19 @@ namespace VehicleManagementSystem.Controllers
 {
     public class VehicleController : Controller
     {
+        private readonly IVehicleService _vehicle;
+
+        //added constructor dependency injection
+        public VehicleController(IVehicleService vehicle)
+        {
+            _vehicle = vehicle;
+        }
 
         [HttpGet]
         [Route("api/vehicle/get-all-cars")]
         public IEnumerable<Vehicle> Get()
         {
-            return VehicleServices.GetAllCars();
+            return _vehicle.GetAllVehicles();
         }
 
         [HttpPost]
@@ -39,20 +46,23 @@ namespace VehicleManagementSystem.Controllers
             string bodyType = vehicle.GetProperty("bodyType").ToString();
 
 
-            try
+            if (vehicleType.Equals(Constants.CAR))
             {
-                //get the add car service to validate and store the data
-                VehicleServices.AddCar(vehicleType,
-                                       vehicleMake,
-                                       vehicleModel,
-                                       engine,
-                                       numOfDoors,
-                                       numOfWheels,
-                                       bodyType);
+                Vehicle v;
+                v = new Car(vehicleType,
+                            vehicleMake,
+                            vehicleModel,
+                            engine,
+                            numOfDoors,
+                            numOfWheels,
+                            bodyType);
+
+                //get the add vehicle service and store the data
+                _vehicle.AddNewVehicle(v);
             }
-            catch
+            else
             {
-                return BadRequest("Invalid input");
+                return BadRequest("Invalid type");
             }
 
             return Ok();

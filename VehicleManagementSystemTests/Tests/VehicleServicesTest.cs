@@ -1,45 +1,46 @@
 ﻿using System;
 using Xunit;
+using VehicleManagementSystem.Models;
 using VehicleManagementSystem.Services;
 
 namespace VehicleManagementSystemTests.Tests
 { 
     public class VehicleServicesTest
     {
+        private readonly IVehicleService _vehicle;
+        public VehicleServicesTest()
+        {
+
+            _vehicle = new VehicleServices();
+        }
+
         //Test adding a new car functionality
         [Fact]
         public void TestAddCar()
         {
-            int sizeBeforeAddCar = VehicleServices.GetAllCars().Count;
+            int sizeBeforeAddCar = _vehicle.GetAllVehicles().Count;
 
-            VehicleServices.AddCar("car", "BMW", "3S", "v6", 4, 4, "Sedan");
+            _vehicle.AddNewVehicle(new Car("car", "BMW", "3S", "v6", 4, 4, "Sedan"));
 
 
-            int sizeAfterAddCar = VehicleServices.GetAllCars().Count;
+            int sizeAfterAddCar = _vehicle.GetAllVehicles().Count;
 
             Assert.Equal(sizeBeforeAddCar + 1, sizeAfterAddCar);
-
-
         }
 
-        //Test if an exception is being thrown when trying to add a different type of vehicle
+        //Test if an wrong vehicle type is getting added or not
         [Fact]
         public void TestAddCarInvalidType()
         {
 
-            bool isExceptionThrown = false;
+            int sizeBeforeAddCar = _vehicle.GetAllVehicles().Count;
 
-            try
-            {
-                VehicleServices.AddCar("bike", "Ducati", "Panigale", "v2", 0, 2, "Sports");
-            }
-            catch
-            {
-                isExceptionThrown = true;
-            }
+            _vehicle.AddNewVehicle(new Car("bike", "BMW", "3S", "v6", 4, 4, "Sedan"));
 
-           Assert.True(isExceptionThrown);
 
+            int sizeAfterAddCar = _vehicle.GetAllVehicles().Count;
+
+            Assert.Equal(sizeBeforeAddCar, sizeAfterAddCar);
         }
 
     }

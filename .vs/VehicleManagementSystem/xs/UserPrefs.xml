@@ -1,42 +1,18 @@
 ﻿<Properties StartupConfiguration="{FEB4E6F4-15B9-4792-80D0-C8179D1BD924}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/ClientApp/src/components/Home.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VehicleManagementSystem/Startup.cs">
     <Files>
-      <File FileName="VehicleManagementSystem/Controllers/VehicleController.cs" Line="22" Column="42" />
+      <File FileName="VehicleManagementSystem/Controllers/VehicleController.cs" Line="59" Column="1" />
       <File FileName="VehicleManagementSystem/Models/Car.cs" />
       <File FileName="VehicleManagementSystem/Models/Vehicle.cs" />
-      <File FileName="VehicleManagementSystem/Services/VehicleServices.cs" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/AddNewCar.js" />
-      <File FileName="VehicleManagementSystemTests/Tests/VehicleServicesTest.cs" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/NavMenu.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/Layout.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/Home.js" Line="37" Column="79" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/AddNewCar.css" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/Home.css" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/components/styles/NavMenu.css" />
-      <File FileName="VehicleManagementSystem/Constants.cs" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/App.js" />
-      <File FileName="VehicleManagementSystem/ClientApp/src/custom.css" />
-      <File FileName="VehicleManagementSystem/ClientApp/public/index.html" />
+      <File FileName="VehicleManagementSystem/Services/VehicleServices.cs" Line="57" Column="28" />
+      <File FileName="VehicleManagementSystem/Services/IVehicleService.cs" Line="7" Column="54" />
+      <File FileName="VehicleManagementSystem/Startup.cs" Line="59" Column="1" />
+      <File FileName="VehicleManagementSystemTests/Tests/VehicleServicesTest.cs" Line="48" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="VehicleManagementSystem" expanded="True">
-            <Node name="VehicleManagementSystem" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="public" expanded="True" />
-                <Node name="src" expanded="True">
-                  <Node name="components" expanded="True">
-                    <Node name="styles" expanded="True" />
-                    <Node name="Home.js" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="VehicleManagementSystem" expanded="True" />
         </State>
       </Pad>
     </Pads>
